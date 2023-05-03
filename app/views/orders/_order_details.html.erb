@@ -1,0 +1,22 @@
+<% @order.line_items.each do |line_item| %>
+  <div class="line-item">
+    <div class="badge">
+      <%= image_tag line_item.product.image_url, class: "product-image" %>
+      <h4><%= line_item.product.name %></h4>
+    </div>
+    <div class="description">
+      <p><%= line_item.product.description %></p>
+    </div>
+    <div class="totals">
+      <p>Unit Price: <%= number_to_currency(line_item.item_price_cents/100, precision: 2) %></p>
+      <p>Quantity: <%= line_item.quantity %></p>
+      <hr>
+      <p>Total: <%= number_to_currency(line_item.total_price_cents/100, precision: 2) %></p>
+    </div>
+  </div>
+<% end %>
+
+<div class="order-summary">
+  <p><strong>Final Amount:</strong> <%= number_to_currency(@order.total_cents/100, precision: 2) %></p>
+  <p><strong>Email:</strong> <%= @order.email %></p>
+</div>
