@@ -4,7 +4,7 @@
     <h1>Order #<%= @order.id %></h1>
   </header>
 
-  <%= render 'order_details' %>
+  <%= render @order %>
 
   <%= link_to "Continue Shopping", root_path, class: 'btn-lg btn-primary order-btn' %>
 
