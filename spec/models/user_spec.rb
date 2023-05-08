@@ -26,7 +26,7 @@ RSpec.describe User, type: :model do
       expect(@user2.errors.full_messages).to include("Email has already been taken")
     end
 
-    it 'should require email, name fields' do
+    it 'should require email, name fields' dos
       @user = User.new(password: "password", password_confirmation: "password")
       expect(@user.valid?).to be false
       expect(@user.errors.full_messages).to include("Email can't be blank")
