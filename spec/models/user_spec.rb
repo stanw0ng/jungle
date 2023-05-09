@@ -33,6 +33,39 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include("First name can't be blank", "Last name can't be blank", "Email can't be blank")
     end
 
+    it 'should have a password with minimum length of 6 characters' do
+      @user = User.new(first_name:"Bobby", last_name:"Tree", email: "test@test.com", password: "pass", password_confirmation: "pass")
+      expect(@user.valid?).to be false
+      expect(@user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
+    end
   end
+
+  describe '.authenticate_with_credentials' do
+    before do
+      @user = User.create(first_name: "Bobby", last_name: "Tree", email: "example@domain.com", password: "password", password_confirmation: "password")
+    end
+    
+    it 'should authenticate a user with valid credentials' do
+      expect(User.authenticate_with_credentials("example@domain.com", "password")).to eq(@user)
+    end
+    
+    it 'should authenticate a user with extra spaces in the email address' do
+      expect(User.authenticate_with_credentials(" example@domain.com ", "password")).to eq(@user)
+    end
+    
+    it 'should authenticate a user with different casing in the email address' do
+      expect(User.authenticate_with_credentials("eXample@domain.COM", "password")).to eq(@user)
+    end
+    
+    it 'should not authenticate a user with invalid credentials' do
+      expect(User.authenticate_with_credentials("example@domain.com", "wrongpassword")).to be nil
+    end
+    
+    it 'should not authenticate a user with a non-existent email' do
+      expect(User.authenticate_with_credentials("nonexistent@example.com", "password")).to be nil
+    end
+
+  end
+
   
 end
