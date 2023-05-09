@@ -1,9 +1,7 @@
 describe('Product Details', () => {
-  it('should visit root', () => {
-    cy.visit('/')
-  });
-
   it('click on Product and show details', () => {
+    cy.visit('/')
+
     cy.get('.products article').first().as('product')
 
     // Verify that the product name is displayed
