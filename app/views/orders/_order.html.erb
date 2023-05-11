@@ -1,3 +1,4 @@
+<%# iterates through line_items which is linked to Orders in schema%>
 <% @order.line_items.each do |line_item| %>
   <div class="line-item">
     <div class="badge">
@@ -7,6 +8,7 @@
     <div class="description">
       <p><%= line_item.product.description %></p>
     </div>
+
     <div class="totals">
       <p>Unit Price: <%= number_to_currency(line_item.item_price_cents/100, precision: 2) %></p>
       <p>Quantity: <%= line_item.quantity %></p>
