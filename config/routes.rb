@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root to: 'products#index'
 
+  # custom route for static About page
   get 'about', to: 'about#index'
 
   resources :products, only: [:index, :show]
