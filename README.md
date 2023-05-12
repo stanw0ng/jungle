@@ -41,39 +41,39 @@ Integration testing with Cypress.
 
 ## Screenshots
 
-![Landing Page]()
+![Landing Page](docs/Jungle_Home.png)
 _Home page_
 
-![Products]()
+![Products](docs/Jungle_All_Products.png)
 _Home page populated with all products_
 
-![Empty Cart]()
+![Empty Cart](docs/Jungle_Empty_Cart.png)
 _Our Cart is empty, let's do some shopping._
 
-![Category]()
+![Category](docs/Jungle_Category.png)
 _Clicking on one of the categories will give us a filtered list of products. Clicking on an product directs us into an individual product page_
 
-![Product Page]()
+![Product Page](docs/Jungle_Product_Page.png)
 
-![Checkout]()
+![Checkout](docs/Jungle_Cart.png)
 _Our cart is now ready for checkout._
 
-![Payment]()
+![Payment](docs/Jungle_Stripe.png)
 _Processing the payment is provided through Stripe._
 
-![Order Summary]()
+![Order Summary](docs/Jungle_Order_Summary.png)
 _An summary of the order is provided after payment is processed._
 
-![Admin Privileges]()
+![Admin Privileges](docs/Jungle_Admin_Tab.png)
 _Admins have the ability to add new categories or products and see shop metrics in the dashboard. Let's try accessing the products and add a new product_
 
-![Basic User Authorization]()
+![Basic User Authorization](docs/Jungle_User_Auth.png)
 _Basic aser authhorization is used so that only users with login information can access the admin features._
 
-![Admin Products]()
+![Admin Products](docs/Jungle_Add_Product.png)
 _Here, all the products can be seen. Users remove items from stock or add new ones._
 
-![Add Product]()
+![Add Product](docs/Jungle_Add_Product_Form.png)
 _New products can be added to the database using this form._
 
 ## To Do
